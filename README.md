@@ -1,3 +1,4 @@
+![SS](https://raw.githubusercontent.com/gauravgorade/responsive-react-header/master/SS.jpg)
 # Responsive React Header
 
 This project is a simple responsive header built using React and the Sass library. It was created for the purpose of experimenting with React components and styling with Sass.
