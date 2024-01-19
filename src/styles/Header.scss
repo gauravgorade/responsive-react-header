@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #faebd7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+
+    .nav-logo {
+        background-color: antiquewhite;
+
+        img {
+            height: 4rem;
+            cursor: pointer;
+        }
+    }
+
+    .nav {
+        ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+
+            li {
+                padding: 0.5rem 1rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 1.3rem;
+                cursor: pointer;
+                transition: 0.5s all;
+
+                &:hover {
+                    background-color: #000000;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .mobile-nav-btn {
+        display: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .mobile-menu-btn[name="mobile-menu-close"] {
+            display: none;
+        }
+    }
+
+    &.active {
+        .nav {
+            transform: translateY(60%);
+            transition: all 1s;
+        }
+
+        .mobile-menu-btn[name="mobile-menu-open"] {
+            display: none;
+        }
+
+        .mobile-menu-btn[name="mobile-menu-close"] {
+            display: block;
+        }
+    }
+
+    /* Mobile screens only */
+    @media screen and (max-width: 768px) {
+        position: relative;
+        padding: 0.5rem 1rem;
+       
+        .mobile-nav-btn {
+            display: block;
+        }
+
+        .nav {
+            padding: 1rem 1rem;
+            position: absolute;
+            transition: all 1s;
+            transform: translateY(-100%);
+            width: 100%;
+            left: 0;
+            z-index: -1;
+
+            background-color: #faebd7;
+
+            ul {
+                display: flex;
+                flex-flow: column wrap;
+            }
+        }
+    }
+}
